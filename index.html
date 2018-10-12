@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Weather API</title>
+</head>
+<body>
+    <!-- adding header -->
+   <div class="header" role="header">
+       <h2>Get Current Weather</h2>
+   </div>
+
+   <!-- Main info that is static -->
+   <div role="main" class="container">
+    <div class="cityText">
+        <h3>Enter City Name</h3>
+    </div>
+   </div>
+
+   <!-- input and button section -->
+   <div class="wrapper">
+       <input type="text" class="cityInput" name="cityName" id="cityName">
+       <button class="submitButton">Search City</button>
+   </div>
+
+   <!-- Dynamically load results section -->
+   <div class="weatheResults"></div>
+
+   <!-- footer -->
+   <footer class="footer" role="footer">
+       <div class="wrapper2">
+           <p>Created by: Brian Thomas &copy; Current Weather App</p>
+       </div>
+   </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
