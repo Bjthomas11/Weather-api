@@ -13,23 +13,22 @@
    <div class="header" role="header">
        <h2>Get The Weather Now</h2>
    </div>
-
-   <!-- Main info that is static -->
-   <div role="main" class="container">
-    <div class="cityText">
-        <h3>Enter City Name</h3>
-        <span class="error"></span>
-    </div>
-   </div>
-
-   <!-- input and button section -->
-   <div class="wrapper">
-       <input type="text" class="cityInput" name="cityName" id="cityName" placeholder="Enter City">
-       <button class="submitButton">Search City</button>
-   </div>
-
-   <!-- Dynamically load results section -->
-   <div class="showWeatherResults"></div>
+       <!-- Main info that is static -->
+       <div role="main" class="container">
+            <div class="cityText">
+                <h3>Enter City Name</h3>
+                <span class="error"></span>
+            </div>
+        </div>
+        
+        <!-- input and button section -->
+        <form id="cityForm">
+            <input type="text" class="cityInput" name="cityName" id="cityName" placeholder="City Name" required>
+            <button type="submit">Search City</button>
+        </form>
+        
+        <!-- Dynamically load results section -->
+        <div class="showWeatherResults"></div>
 
    <!-- footer -->
    <footer class="footer" role="footer">
