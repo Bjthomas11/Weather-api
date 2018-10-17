@@ -7,7 +7,7 @@
 
 $(document).ready(function(){
     // key variables 
-    let URL = "http://api.openweathermap.org/data/2.5/weather?q=dallas&APPID=7307cd677e83e88b9129d98065459b1e";
+    let URL = "http://api.openweathermap.org/data/2.5/weather?q=dallas&units=imperial&APPID=7307cd677e83e88b9129d98065459b1e";
     let key = "7307cd677e83e88b9129d98065459b1e";
     let units = "units=imperial";
 
@@ -33,6 +33,7 @@ $(document).ready(function(){
             },
             // if use submits a city thats not in the api it runs an error function
             error:function(xhr, ajaxOptions, thrownError){
+                
                 if(xhr.status == 404){
                     errorResults(thrownError);
                 }
@@ -44,13 +45,13 @@ $(document).ready(function(){
     // pass in message as a para that will be called inside the function to display to the user
     function errorResults(message){
         // take error span and put in the html a message
-        $(".error").html("City Not Found");
+        $(".error").html(alert("City Not Found"));
     }
 
     function weatherResults(data){
         console.log(data);
         let results =   `
-                            <h2>Weather Now for ${data.name}</h2>
+                            <h2>Weather Now for ${data.name},${data.sys.country}</h2>
                             <h3>Weather: ${data.weather[0].main}<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png"></h3>
                             <h3>Description: ${data.weather[0].description}</h3>
                             <h3>Temperature: ${data.main.temp} &deg;</h3>
