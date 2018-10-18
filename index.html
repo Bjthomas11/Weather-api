@@ -9,30 +9,31 @@
     <title>Now Weather</title>
 </head>
 <body>
-    <!-- adding header -->
-   <div class="header" role="header">
+
+   <header role="header">
        <h2>Get The Weather Now</h2>
-   </div>
-        <div class="container">
+   </header>
+        <main role="main" class="container">
             <hr class="style-two">
-            <!-- Main info that is static -->
+
             <div class="cityWrapper">
-                <div role="main" class="cityName">
+                <div class="cityName">
                         <div class="cityText">
                             <h3>Enter City Name</h3>
                         </div>
                     </div>
-                    
+                
                     <!-- input and button section -->
-                    <form id="cityForm">
-                        <input type="text" class="cityInput" name="cityName" id="cityName" placeholder="City Name" required>
+                    <form  role="form" id="cityForm">
+                        <input type="text" class="cityInput" name="cityName" id="cityName" placeholder="Ex. Boston" required>
                         <button class="cityButton" type="submit">Search City</button>
                     </form>
+                    <div class="error"></div>
                 </div>
                 <!-- Dynamically load results section -->
-                <div class="showWeatherResults"></div>
-        </div>
-   <!-- footer -->
+                <section class="showWeatherResults"></section>
+        </main>
+
    <footer role="footer">
        <div class="footerText">
            <p>Created by: Brian Thomas &copy; Now Weather App</p>

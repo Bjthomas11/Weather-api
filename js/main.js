@@ -44,21 +44,24 @@ $(document).ready(function(){
     // Create a function for error when user submits a city that isnt in the api
     // pass in message as a para that will be called inside the function to display to the user
     function errorResults(message){
-        // take error span and put in the html a message
-        $(".error").html(alert("City Not Found"));
+        $(".error").css("display", "block").fadeOut(4000);
+        // take error div and put in a message
+        $(".error").html("City Not Found");
     }
 
     function weatherResults(data){
         console.log(data);
-        let results =   `
-                            <h2>Weather Now for ${data.name},${data.sys.country}</h2>
-                            <h3>Weather: ${data.weather[0].main}<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png"></h3>
-                            <h3>Description: ${data.weather[0].description}</h3>
-                            <h3>Temperature: ${data.main.temp} &deg;</h3>
-                            <h3>Pressure: ${data.main.pressure} hpa</h3>
-                            <h3>Humidity: ${data.main.humidity} %</h3>
-                            <h3>Wind Speed: ${data.wind.speed} m/s</h3>
-                            <h3>Wind Direction: ${data.wind.deg} &deg;</h3> 
+        let results =   `   
+                            <div class="results">
+                                <h3>Weather Now for ${data.name},${data.sys.country}</h3>
+                                <p>Weather: ${data.weather[0].main}<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png"></p>
+                                <p>Description: ${data.weather[0].description}</p>
+                                <p>Temperature: ${data.main.temp} &deg;</p>
+                                <p>Pressure: ${data.main.pressure} hpa</p>
+                                <p>Humidity: ${data.main.humidity} %</p>
+                                <p>Wind Speed: ${data.wind.speed} m/s</p>
+                                <p>Wind Direction: ${data.wind.deg} &deg;</p> 
+                            </div>
 
                         `;  
         // show the results dynamically in showWeatherResults div

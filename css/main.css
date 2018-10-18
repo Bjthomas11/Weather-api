@@ -21,7 +21,7 @@ hr.style-two {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-.header{
+header{
     background-color: transparent;
     width: 100%;
     text-align: center;
@@ -29,14 +29,14 @@ hr.style-two {
     border-radius: 0.4rem;
 }
 
-h2{
-    font-size: 60px;
+header h2{
+    font-size: 40px;
 }
 
-h3{
+.cityText h3 {
     margin-top: 0;
     margin-bottom: 25px;
-    font-size: 2.2rem;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -51,12 +51,12 @@ h3{
 }
 
 .cityInput{
-    width: 300px;
-    padding: 10px;
+    width: 250px;
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid #ced4da;
-    height: 40px;
-    font-size: 25px;
+    height: auto;
+    font-size: 20px;
 }
 
 
@@ -64,23 +64,46 @@ h3{
 .cityButton{
     height: auto;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
     background-color: #008CBA;
-    padding: 10px;
+    padding: 8px;
     border: none;
     margin-left: 10px;
+    transition: all .1s linear;
 }
+
+.cityButton:active {
+    box-shadow: 2px 2px 2px rgb(0, 89, 119);
+    transform: translateY(4px);
+  }
 
 .cityButton:hover{
     background-color: rgb(0, 89, 119);
     cursor: pointer;
 }
 
+.results h3{
+    font-size: 25px;
+}
+.results p{
+    font-size: 18px;
+
+}
+
 .showWeatherResults{
     margin: auto;
     text-align: center;
+}
+
+.error{
+    display: none;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('https://i.imgur.com/GnyDvKN.png');
+    width: 150px;
+    border-radius: 10px;
 }
 
 
@@ -90,6 +113,18 @@ footer{
     border-radius: 10px;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
 }
+
+/* Mobile Devices */
+
+/* @media only screen and (max-width: 768px){
+    
+} */
+
+/* Tablets */
+
+/* @media only screen and (min-width: 600px){
+
+} */
