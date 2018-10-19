@@ -7,7 +7,7 @@
 
 $(document).ready(function(){
     // key variables 
-    let URL = "http://api.openweathermap.org/data/2.5/weather?q=dallas&units=imperial&APPID=7307cd677e83e88b9129d98065459b1e";
+    let URL = "https://api.openweathermap.org/data/2.5/weather";
     let key = "7307cd677e83e88b9129d98065459b1e";
     let units = "units=imperial";
 
@@ -24,7 +24,7 @@ $(document).ready(function(){
         // START AJAX CALL 
         $.ajax({
             // ajax call takes url, type of connection, type of data we want to recieve from the api, then a callback function
-            url:  `http://api.openweathermap.org/data/2.5/weather?q=${cityInput}&${units}&APPID=${key}`,
+            url:  `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&${units}&APPID=${key}`,
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -44,7 +44,7 @@ $(document).ready(function(){
     // Create a function for error when user submits a city that isnt in the api
     // pass in message as a para that will be called inside the function to display to the user
     function errorResults(message){
-        $(".error").css("display", "block").fadeOut(4000);
+        $(".error").fadeOut(4000);
         // take error div and put in a message
         $(".error").html("City Not Found");
     }
@@ -54,13 +54,13 @@ $(document).ready(function(){
         let results =   `   
                             <div class="results">
                                 <h3>Weather Now for ${data.name},${data.sys.country}</h3>
-                                <p>Weather: ${data.weather[0].main}<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png"></p>
-                                <p>Description: ${data.weather[0].description}</p>
-                                <p>Temperature: ${data.main.temp} &deg;</p>
-                                <p>Pressure: ${data.main.pressure} hpa</p>
-                                <p>Humidity: ${data.main.humidity} %</p>
-                                <p>Wind Speed: ${data.wind.speed} m/s</p>
-                                <p>Wind Direction: ${data.wind.deg} &deg;</p> 
+                                <p><span class="bold">Weather:</span> ${data.weather[0].main}<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png"></p>
+                                <p><span class="bold">Description: ${data.weather[0].description}</p>
+                                <p><span class="bold">Temperature: ${data.main.temp} &deg;</p>
+                                <p><span class="bold">Pressure: ${data.main.pressure} hpa</p>
+                                <p><span class="bold">Humidity: ${data.main.humidity} %</p>
+                                <p><span class="bold">Wind Speed: ${data.wind.speed} m/s</p>
+                                <p><span class="bold">Wind Direction: ${data.wind.deg} &deg;</p> 
                             </div>
 
                         `;  
